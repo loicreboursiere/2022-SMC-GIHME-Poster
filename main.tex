@@ -1,0 +1,401 @@
+
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.24, orientation=portrait]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage{makecell}
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+%\newlength{\threecolwid}
+%\setlength{\paperwidth}{48in} % A0 width: 46.8in
+%\setlength{\paperheight}{36in} % A0 height: 33.1in
+\setlength{\paperheight}{48in} % A0 width: 46.8in
+\setlength{\paperwidth}{36in} % A0 height: 33.1in
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.5\textwidth} % Width of one column
+\setlength{\twocolwid}{2\onecolwid} % Width of two columns
+%\setlength{\threecolwid}{3\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\newcommand{\fatskip}{\vspace{3cm}}
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{Guitar Improvisations with Hexaphonic Multieffect (GIHME) Dataset and Practice Analysis} % Poster title
+
+%\author{matematika.pl} % Author(s)
+
+\author{Loïc Reboursière%\thanks{These authors contributed equally to this work}
+\and
+Thierry Dutoit%\textsuperscript{$\star$}
+\and
+Vincent Tiffon}
+
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+%----------------------------------------------------------------------------------------
+%	OVERVIEW
+%----------------------------------------------------------------------------------------
+
+\begin{alertblock}{Overview}
+
+%We present a database of emotional speech intended to be open-sourced and used for synthesis and generation purpose. It contains data for male and female actors in English and a male actor in French. The database covers 5 emotion classes so it could be suitable to build synthesis and voice transformation systems with the potential to control the emotional dimension in a continuous way.\\
+%We then present three experiments (emotional voice conversion, categorical emotional TTS, and control of emotional intensity in TTS)  and their results.
+
+
+\begin{itemize}
+    \item Dataset for hexaphonic guitar practice analysis as well as MIR-related tasks
+    \item Contains synchronized video, audio (hexaphonic wet and dry as well as mono reduction) and data for each improvisation recording
+    \item Open-source : \url{https://github.com/numediart/GIHME}
+    
+\end{itemize}
+
+
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	QUICK REVISION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Experiments scenarios}
+
+%\textbf{Forms of Quadratic Function}
+
+ 
+\begin{itemize}
+    \item Scenario 0 : discovery scenario with the researcher
+    \item Scenario 1 : different string allocation for chosen audio effects (see Table \ref{tab:scenario1})
+    \item Scenario 2 : control of global and individual audio effects bypass (see Table \ref{tab:scenario2})
+\end{itemize}
+\\ \newline \fatskip
+\begin{table}
+  
+  \label{tab:scenario1}
+  \begin{tabular}{ccc}
+    \toprule
+    Name &Strings with effects&Strings with no effect\\
+    \midrule
+    1\_1 & E-A-D & G-B-e\\
+    1\_2 & G-B-e& E-A-D\\
+    1\_3 & E-D-B & A-G-e\\
+    1\_4 & A-G-e& E-D-B\\
+    1\_5 & \multicolumn{2}{c}{\makecell{Distribution chosen by the guitarist}}  \\
+  \bottomrule
+\end{tabular}
+	\caption{Scenario 1 sub-scenarios.}%\tablefootnote{The standard tuning of a six-string guitar is E-A-D-G-B-e, the \textbf{E} string being the 6\textsuperscript{th} string and the \textbf{e} string, the 1\textsuperscript{st} string.}.}
+\end{table}
+\\ \newline \fatskip
+\begin{table}
+  
+  \label{tab:scenario2}
+  \begin{tabular}{cc}
+    \toprule
+    Name & Bypass controls mapping\\
+    \midrule
+    2\_1 & \makecell{1 button controls the bypass of 1 hexaphonic & effect on all strings}\\
+    2\_2 & \makecell{1 button controls the bypass of the effects & applied on 1 string} \\
+    2\_3 & \makecell{1 bank per effect and 1 button per string}\\
+    2\_4 & \makecell{1 bank per string and 1 button per effect}\\
+    2\_5 & \makecell{Distribution (2\_3 or 2\_4) chosen by the guitarist and \\ definition of recallable presets}  \\
+  \bottomrule
+\end{tabular}
+	\caption{Scenario 2 sub-scenarios.}
+
+\end{table}
+
+%\begin{table}[]
+%\begin{tabular}{|p{0.3\onecolwid}|p{0.7\onecolwid}|}
+%\hline
+%Type of data & Audio, text and emotion category\\ \hline
+%How data was acquired & Audio recorded in 1 anechoic chamber of the University of Mons and 2 %different anechoic chambers of the Northeastern University campus. \\ \hline
+%Data format & Segmented in sentences, associated with transcriptions (CMU-Artic/SIWIS), %classified in emotional categories\\ \hline
+%Experimental features & Recordings of sentences uttered by 2 male and 2 female speakers in 5 %different emotions, making a total of 7000 sentences\\ \hline
+%Data accessibility & https://github.com/numediart/EmoV-DB \\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+%\fatskip
+%\begin{table}
+%\center
+%\captionsetup{justification=centering}
+
+%\begin{tabular}{|c|c|c|c|c|c|c|c|}
+%\hline
+%Speaker & Gender & Language & Neutral & Amused & Angry & Sleepy & Disgust\\
+\hline
+%Spk-Je &  Female &English &417 &222 &523 &466 &189\\
+%Spk-Bea &  Female &English &373 &309 &317 &520 &347\\
+%Spk-Sa &  Male &English &493 &501 &468 &495 &497\\
+%Spk-Jsh &  Male &English &302 &298 &- &263 &-\\
+%Spk-No &  Male &French & 317 & - & 273 & - & -\\
+%\hline
+
+%\end{tabular}
+%\caption{Gender and language of recorded sentences of/from each actor/speaker and amount of utterances segmented per speaker and per emotion. All speakers were recorded in all emotions, the - sign only signifies that the corresponding data were not segmented yet.}
+%\end{table}
+
+\end{block}
+
+%------------------------------------------------
+
+% \begin{figure}
+% \includegraphics[width=0.8\linewidth]{1.jpg}
+% \caption{Graph of $f(x)=ax^2|_{\{0.1, 0.3, 1.0, 3.0\}}$}
+% \end{figure}
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+%\begin{block}{Dataset}
+%\end{block} 
+
+
+%\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+%\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	P
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Recording setup}
+
+
+%This system is built by extracting speech features with the WORLD vocoder of both source and target emotional voices, performing a Dynamic Time Warping  to align the features in time and computing a regression between the source and target features. The regression model used is a simple deep neural network (DNN) of 6 feedforward hidden layers in which each hidden layer is constituted of 1024 hyperbolic tangent units.
+Use of Merlin Toolkit
+\begin{itemize}
+    \item Acoustic feature extraction with the WORLD vocoder (source and target)
+    \item DTW to align features
+    \item Regression with DNN of 6 layers of 1024 tangent units
+\end{itemize}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+%\end{column} % End of column 2.1
+
+%\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+\fatskip
+ \begin{table}
+ \center
+ %\captionsetup{justification=centering}
+
+ \label{tab:resultsEvalPerc}
+ \begin{tabular}{|c|c|c|c|}
+ \hline
+ Pair & Spk-Bea & Spk-Sa & Spk-No \\
+ \hline
+ neutral-neutral & 96\% & 90\% & 98\%\\
+ neutral-angry  & 78\% & 71\% & 83\%\\
+ \hline
+ \end{tabular}
+  \caption{Percentage of angry and neutral speech styles being accurately classified.}
+ \end{table}
+
+%\end{column}
+
+%\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+
+
+%\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+
+
+\begin{column}{\onecolwid} % Begin a column which is two columns wide (column 2)
+
+%\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+\fatskip
+\begin{block}{Dataset}
+
+%we choose DCTTS, a system that seems to combine advantages of several systems. DCTTS models a sequence-to-sequence problem with a encoder-decoder structure along with an Attention Mechanism. Its architecture is entirely CNN-based, there is no RNN component.
+%We investigate the possibility to adapt this model to have an emotional TTS. To do this, we fine-tune system to the neutral voice of one of the actresses of in our database. We then fine-tune the obtained neutral TTS model with each emotion class of the same speaker.
+%The experiments performed on this dataset also assess its usability with deep learning algorithms for voice generation systems.
+
+Use of DCTTS (tensorflow implementation)
+\begin{itemize}
+    \item pre-training on LJ-Speech
+    \item fine-tuning towards the neutral voice of one of the actresses
+    \item fine-tuning towards each emotion class of the same speaker
+\end{itemize}
+
+
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+%\end{column} % End of column 2.1
+
+%\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+
+\fatskip\fatskip
+\begin{table}[h]
+
+\label{mos_synth}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+ & Intelligibility & Confidence\\
+\hline
+Amused & $2.01 \pm 0.24$ & $2.00 \pm 0.27$
+\\ 
+Angry & $2.76 \pm 0.25$ & $2.10 \pm 0.28$
+\\ 
+Disgusted & $2.17 \pm 0.27$ & $2.27 \pm 0.30$ 
+\\ 
+Neutral & $3.60 \pm 0.26$ & $3.59 \pm 0.24$
+\\ 
+Sleepy & $2.59 \pm 0.28$ & $3.29 \pm 0.26$ 
+\\ 
+
+
+\hline
+\end{tabular}
+\caption{MOS test results of synthesized files}
+\end{center}
+\end{table}
+
+%\end{column}
+
+%\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+
+
+
+%\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+%\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+%	P
+%----------------------------------------------------------------------------------------
+\fatskip
+\begin{block}{Analysis}
+
+
+%multi-emotional TTS system with the possibility to control the intensity of emotional categories. We implemented a modified version of DCTTS that takes an encoding of the emotion category at the input of the decoder. During training, a simple one-hot encoding is used. But at synthesis stage, we can modify the intensity of an emotion category by inputting numbers smaller or greater than one. 
+%The results sound encouraging and we are planning to do some subjective evaluations to assess the system.
+
+Modified version of DCTTS that takes an encoding of the emotion category at the input. We concatenate encodings with character embeddings.
+\begin{itemize}
+    \item one-hot encoding is used during training
+    \item at synthesis stage, we can modify the intensity of an emotion category by inputting other codes. We chose these constraints: the sum must be one
+    \item Demonstration
+    
+\end{itemize}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+
+%\end{column} % End of column 2.1
+
+%\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+
+\fatskip
+\begin{figure}[h]
+%\includegraphics[scale=0.7]{block_diagram_moyen}
+\includegraphics[width = 0.5\onecolwid]{demo_plot.png}
+\caption{Demo}
+\label{demo}
+\end{figure}
+
+%\end{column}
+
+%\end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+
+
+%----------------------------------------------------------------------------------------
+%	IMPORTANT To REMEMBER
+%----------------------------------------------------------------------------------------
+
+%\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+%\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+
+\begin{alertblock}{Future Works}
+
+\begin{itemize}
+    \item Perception Tests for the last experiment
+    \item Multi-speaker model (For now we use the data from only one speaker)
+    \item Synthesis with non-verbal expressions
+\end{itemize}
+
+\end{alertblock} 
+
+%----------------------------------------------------------------------------------------
+
+
+%\end{column} % End of the second column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+%\begin{column}{\onecolwid} % The third column
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
+
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}

@@ -1,8 +1,9 @@
 
 \documentclass[final]{beamer}
 
-\usepackage[scale=1.24, orientation=portrait]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=1.24, size=a0, orientation=portrait]{beamerposter} % Use the beamerposter package for laying out the poster
 \usepackage{makecell}
+%\usepackage{authblk}
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
 \setbeamercolor{block title}{fg=ngreen,bg=white} % Colors of the block titles
@@ -48,11 +49,15 @@
 
 %\author{matematika.pl} % Author(s)
 
-\author{Loïc Reboursière%\thanks{These authors contributed equally to this work}
-\and
-Thierry Dutoit%\textsuperscript{$\star$}
-\and
-Vincent Tiffon}
+\author{Loïc Reboursière \inst{1} \and Thierry Dutoit \inst{1} \and Vincent Tiffon \inst{2}}
+\institute[shortinst]{\inst{1} UMONS, ISIA Lab, first.last@umons.ac.be \and %
+                      \inst{2} PRISM, Université AixMarseille, tiffon@prism.cnrs.fr}
+
+%\affil{UMONS, ISIA LAb \email{loic.reboursiere@umons.ac.be}}
+%\and
+%thierry.dutoit@umons.ac.be
+%\and 
+%tiffon@prism.cnrs.fr}
 
 %----------------------------------------------------------------------------------------
 \begin{document}
@@ -253,7 +258,7 @@ Vincent Tiffon}
 \begin{column}{\onecolwid} % Begin a column which is two columns wide (column 2)
 
 %\begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
-\fatskip
+
 \begin{block}{Dataset}
 
 %we choose DCTTS, a system that seems to combine advantages of several systems. DCTTS models a sequence-to-sequence problem with a encoder-decoder structure along with an Attention Mechanism. Its architecture is entirely CNN-based, there is no RNN component.
@@ -265,7 +270,8 @@ Vincent Tiffon}
     \item 5 guitarists : 
     \item 10h of musical improvisations and 4h30 of interviews
     \item Automatic (effects bypass activation), semi-automatic (pitch and fret), manual  (playing techniques and extended playing techniques) and global (tuning, improvisation structure, used effects and presets) annotations
-    \item All the interviews have been transcribed
+    \item Annotations are in different format in order to be imported in different kind of software (Sonic Visualizer\footnote{https://www.sonicvisualiser.org/}, Advene\footnote{https://www.advene.org/}, etc.)
+    \item All the interviews have been transcribed in Microsoft Word format
 \end{itemize}
 
 
@@ -299,19 +305,21 @@ Vincent Tiffon}
 %----------------------------------------------------------------------------------------
 %	P
 %----------------------------------------------------------------------------------------
-\fatskip
+
 \begin{block}{Analysis}
 \begin{itemize}
-    \item First analysis based on the transcriptions of the interviews.
-    \item All guitarists felt, at some point, constrained by the setup or by the scenarios but eventually find ways around those constraints
-    \item Despite being more "complex" the system respect the practice of the guitarist\\ 
-    \begin{quote}
-     It doesn't question the practice. The practice stays, it exists. However, it reconsiders it, in the sense where, as new things happen, you have to adapt. [...] It's a system that forces you to look deeply at the instrument for ways to adapt, even if it is a material that I know. (Guitarist 2, extract of post improvisation interview, scenario2\_5, pers. comm.)
-    \end{quote}
-    \item This system brings extensive sound possibilities and easily fits in practices that uses extremly individualisation of the strings such as classical guitar or prepared guitar practices\\ 
-\begin{quote}
-With a classical guitar, we work with the aim of being able to have an action as independent as possible from each finger and therefore potentially also differentiated regarding the strings. (Guitarist 4, complementary interview, pers. comm.)
-\end{quote}
+    \item First analysis based on the transcriptions of the interviews
+    \item All guitarists felt, at some point, constrained by the experimental setup (scenario or technical elements) 
+    \item All guitarists developed strategies to take ownership of the hexaphonic multieffect possibilities
+    \item Despite being more "complex" the system respect the practice of the guitarist and is felt as "familiar" 
+    %\begin{quote}
+     %It doesn't question the practice. The practice stays, it exists. However, it reconsiders it, in the sense where, as new things happen, you have to adapt. [...] It's a system that forces you to look deeply at the instrument for ways to adapt, even if it is a material that I know. (Guitarist 2, extract of post improvisation interview, scenario2\_5, pers. comm.)
+    %\end{quote}
+    \item This system brings extensive sound possibilities similar to the ones found by DAW
+    \item Hexaphonic multieffect could more easily fit into practices that use extensively individualisation of the fingers/strings, such as classical guitar or prepared guitar practices
+%\begin{quote}
+%With a classical guitar, we work with the aim of being able to have an action as independent as possible from each finger and therefore potentially also differentiated regarding the strings. (Guitarist 4, complementary interview, pers. comm.)
+%\end{quote}
 \end{itemize}
 
 %multi-emotional TTS system with the possibility to control the intensity of emotional categories. We implemented a modified version of DCTTS that takes an encoding of the emotion category at the input of the decoder. During training, a simple one-hot encoding is used. But at synthesis stage, we can modify the intensity of an emotion category by inputting numbers smaller or greater than one. 
@@ -346,9 +354,11 @@ With a classical guitar, we work with the aim of being able to have an action as
 \begin{alertblock}{Future Works}
 
 \begin{itemize}
-    \item Perception Tests for the last experiment
-    \item Multi-speaker model (For now we use the data from only one speaker)
-    \item Synthesis with non-verbal expressions
+    \item More guitarists with different playing styles
+    \item Specific software for visualize all the different elements 
+    \item Use of theoretical music models (such as Anthony de Souza's fretboard transformations model\footnote{J. De Souza, “Fretboard Transformations,” Journal of
+Music theory, vol. 62, no. 1, pp. 1–39, 2018.}) to have common ground for the analysis
+    \item Develop a dual before/after hexaphony approach for practice analysis
 \end{itemize}
 
 \end{alertblock} 
@@ -372,6 +382,7 @@ With a classical guitar, we work with the aim of being able to have an action as
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
+This work was partially funded by the Walloon Region and the EU, in the framework of ERDF project DigiSTORM.
 
 %----------------------------------------------------------------------------------------
 

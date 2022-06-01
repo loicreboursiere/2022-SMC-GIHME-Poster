@@ -82,8 +82,12 @@ Vincent Tiffon}
 
 
 \begin{itemize}
-    \item Dataset for hexaphonic guitar practice analysis as well as MIR-related tasks
-    \item Contains synchronized video, audio (hexaphonic wet and dry as well as mono reduction) and data for each improvisation recording
+    \item Dataset for hexaphonic guitar practice (i.e with a hexaphonic multieffect) analysis as well as MIR-related tasks
+    
+    \item Contains synchronized video, audio, data and transcribed interview for each improvisation recording
+    
+    \item Annotated data include : picth, fret, playing techniques, extended playing techniques, improvisation structure and duration, tuning and used audio effects and presets
+    
     \item Open-source : \url{https://github.com/numediart/GIHME}
     
 \end{itemize}
@@ -96,23 +100,22 @@ Vincent Tiffon}
 %	QUICK REVISION
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Experiments scenarios}
+\begin{block}{Experiments}
 
 %\textbf{Forms of Quadratic Function}
 
- 
 \begin{itemize}
-    \item Scenario 0 : discovery scenario with the researcher
-    \item Scenario 1 : different string allocation for chosen audio effects (see Table \ref{tab:scenario1})
-    \item Scenario 2 : control of global and individual audio effects bypass (see Table \ref{tab:scenario2})
+    \item Two scenarios (see Table 1 and 2) were part of the recordings of the experiment. They were preceeded by a "discovery" scenario where the researcher help setting up the effects;
+    \item Each sub-scenario was divided in test, improvisation recording and interview parts. These three steps could be repeated.
 \end{itemize}
-\\ \newline \fatskip
+
+\\ 
 \begin{table}
   
   \label{tab:scenario1}
   \begin{tabular}{ccc}
     \toprule
-    Name &Strings with effects&Strings with no effect\\
+    Name & Strings with effects & Strings with no effect\\
     \midrule
     1\_1 & E-A-D & G-B-e\\
     1\_2 & G-B-e& E-A-D\\
@@ -121,9 +124,9 @@ Vincent Tiffon}
     1\_5 & \multicolumn{2}{c}{\makecell{Distribution chosen by the guitarist}}  \\
   \bottomrule
 \end{tabular}
-	\caption{Scenario 1 sub-scenarios.}%\tablefootnote{The standard tuning of a six-string guitar is E-A-D-G-B-e, the \textbf{E} string being the 6\textsuperscript{th} string and the \textbf{e} string, the 1\textsuperscript{st} string.}.}
+	\caption{Scenario 1 : modification of strings allocation for chosen audio effects.}%\tablefootnote{The standard tuning of a six-string guitar is E-A-D-G-B-e, the \textbf{E} string being the 6\textsuperscript{th} string and the \textbf{e} string, the 1\textsuperscript{st} string.}.}
 \end{table}
-\\ \newline \fatskip
+\\ \newline
 \begin{table}
   
   \label{tab:scenario2}
@@ -138,7 +141,7 @@ Vincent Tiffon}
     2\_5 & \makecell{Distribution (2\_3 or 2\_4) chosen by the guitarist and \\ definition of recallable presets}  \\
   \bottomrule
 \end{tabular}
-	\caption{Scenario 2 sub-scenarios.}
+	\caption{Scenario 2 : control of global and individual audio effects bypass.}
 
 \end{table}
 
@@ -163,7 +166,7 @@ Vincent Tiffon}
 %\begin{tabular}{|c|c|c|c|c|c|c|c|}
 %\hline
 %Speaker & Gender & Language & Neutral & Amused & Angry & Sleepy & Disgust\\
-\hline
+%\hline
 %Spk-Je &  Female &English &417 &222 &523 &466 &189\\
 %Spk-Bea &  Female &English &373 &309 &317 &520 &347\\
 %Spk-Sa &  Male &English &493 &501 &468 &495 &497\\
@@ -205,36 +208,33 @@ Vincent Tiffon}
 
 
 %This system is built by extracting speech features with the WORLD vocoder of both source and target emotional voices, performing a Dynamic Time Warping  to align the features in time and computing a regression between the source and target features. The regression model used is a simple deep neural network (DNN) of 6 feedforward hidden layers in which each hidden layer is constituted of 1024 hyperbolic tangent units.
-Use of Merlin Toolkit
+
+
+%\begin{figure}[h]
+%\includegraphics[scale=0.7]{block_diagram_moyen}
+%\includegraphics[width = 0.98\onecolwid]{img/experiments-recording-setup.pdf}
+%\caption{Experimental audio and recording setup.}
+%\label{demo}
+%\end{figure}
+
 \begin{itemize}
-    \item Acoustic feature extraction with the WORLD vocoder (source and target)
-    \item DTW to align features
-    \item Regression with DNN of 6 layers of 1024 tangent units
+    \item Medium long shot of the guitarist as well as hexaphonic multieffect GUI modification were video recorded
+    \item Audio recordings contain "dry" (i.e. no effect) and "wet" (i.e. with effects) hexaphonic signals as well as monophonic reduction of the wet signals
+    \item Hexaphonic multieffect gathers 6 arguably "classic" audio effects for guitarists (distorsion, delay, ring modulator, flanger, tremolo and reverb) and an graphical representation of the individual bypasses as a matrix
 \end{itemize}
+
+\begin{figure}[h]
+%\includegraphics[scale=0.7]{block_diagram_moyen}
+\includegraphics[width = 0.7\onecolwid]{img/191025-Patch-experience.png}
+\caption{Experimental audio and recording setup.}
+\label{demo}
+\end{figure}
 
 \end{block}
 
 %----------------------------------------------------------------------------------------
 
-%\end{column} % End of column 2.1
 
-%\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
-\fatskip
- \begin{table}
- \center
- %\captionsetup{justification=centering}
-
- \label{tab:resultsEvalPerc}
- \begin{tabular}{|c|c|c|c|}
- \hline
- Pair & Spk-Bea & Spk-Sa & Spk-No \\
- \hline
- neutral-neutral & 96\% & 90\% & 98\%\\
- neutral-angry  & 78\% & 71\% & 83\%\\
- \hline
- \end{tabular}
-  \caption{Percentage of angry and neutral speech styles being accurately classified.}
- \end{table}
 
 %\end{column}
 
@@ -260,14 +260,21 @@ Use of Merlin Toolkit
 %We investigate the possibility to adapt this model to have an emotional TTS. To do this, we fine-tune system to the neutral voice of one of the actresses of in our database. We then fine-tune the obtained neutral TTS model with each emotion class of the same speaker.
 %The experiments performed on this dataset also assess its usability with deep learning algorithms for voice generation systems.
 
-Use of DCTTS (tensorflow implementation)
+%Use of DCTTS (tensorflow implementation)
 \begin{itemize}
-    \item pre-training on LJ-Speech
-    \item fine-tuning towards the neutral voice of one of the actresses
-    \item fine-tuning towards each emotion class of the same speaker
+    \item 5 guitarists : 
+    \item 10h of musical improvisations and 4h30 of interviews
+    \item Automatic (effects bypass activation), semi-automatic (pitch and fret), manual  (playing techniques and extended playing techniques) and global (tuning, improvisation structure, used effects and presets) annotations
+    \item All the interviews have been transcribed
 \end{itemize}
 
 
+\begin{figure}[h]
+%\includegraphics[scale=0.7]{block_diagram_moyen}
+\includegraphics[width = 0.98\onecolwid]{img/IvannCruz_2_3_1_Advene.png}
+\caption{GIHME annotations integration example in Advene software.}
+\label{demo}
+\end{figure}
 
 \end{block}
 
@@ -277,32 +284,7 @@ Use of DCTTS (tensorflow implementation)
 
 %\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
 
-\fatskip\fatskip
-\begin{table}[h]
 
-\label{mos_synth}
-\begin{center}
-\begin{tabular}{|c|c|c|}
-\hline
- & Intelligibility & Confidence\\
-\hline
-Amused & $2.01 \pm 0.24$ & $2.00 \pm 0.27$
-\\ 
-Angry & $2.76 \pm 0.25$ & $2.10 \pm 0.28$
-\\ 
-Disgusted & $2.17 \pm 0.27$ & $2.27 \pm 0.30$ 
-\\ 
-Neutral & $3.60 \pm 0.26$ & $3.59 \pm 0.24$
-\\ 
-Sleepy & $2.59 \pm 0.28$ & $3.29 \pm 0.26$ 
-\\ 
-
-
-\hline
-\end{tabular}
-\caption{MOS test results of synthesized files}
-\end{center}
-\end{table}
 
 %\end{column}
 
@@ -319,18 +301,26 @@ Sleepy & $2.59 \pm 0.28$ & $3.29 \pm 0.26$
 %----------------------------------------------------------------------------------------
 \fatskip
 \begin{block}{Analysis}
-
+\begin{itemize}
+    \item First analysis based on the transcriptions of the interviews.
+    \item All guitarists felt, at some point, constrained by the setup or by the scenarios but eventually find ways around those constraints
+    \item Despite being more "complex" the system respect the practice of the guitarist\\ 
+    \begin{quote}
+     It doesn't question the practice. The practice stays, it exists. However, it reconsiders it, in the sense where, as new things happen, you have to adapt. [...] It's a system that forces you to look deeply at the instrument for ways to adapt, even if it is a material that I know. (Guitarist 2, extract of post improvisation interview, scenario2\_5, pers. comm.)
+    \end{quote}
+    \item This system brings extensive sound possibilities and easily fits in practices that uses extremly individualisation of the strings such as classical guitar or prepared guitar practices\\ 
+\begin{quote}
+With a classical guitar, we work with the aim of being able to have an action as independent as possible from each finger and therefore potentially also differentiated regarding the strings. (Guitarist 4, complementary interview, pers. comm.)
+\end{quote}
+\end{itemize}
 
 %multi-emotional TTS system with the possibility to control the intensity of emotional categories. We implemented a modified version of DCTTS that takes an encoding of the emotion category at the input of the decoder. During training, a simple one-hot encoding is used. But at synthesis stage, we can modify the intensity of an emotion category by inputting numbers smaller or greater than one. 
 %The results sound encouraging and we are planning to do some subjective evaluations to assess the system.
 
-Modified version of DCTTS that takes an encoding of the emotion category at the input. We concatenate encodings with character embeddings.
-\begin{itemize}
-    \item one-hot encoding is used during training
-    \item at synthesis stage, we can modify the intensity of an emotion category by inputting other codes. We chose these constraints: the sum must be one
-    \item Demonstration
     
-\end{itemize}
+
+    
+
 
 \end{block}
 
@@ -340,13 +330,6 @@ Modified version of DCTTS that takes an encoding of the emotion category at the 
 
 %\begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
 
-\fatskip
-\begin{figure}[h]
-%\includegraphics[scale=0.7]{block_diagram_moyen}
-\includegraphics[width = 0.5\onecolwid]{demo_plot.png}
-\caption{Demo}
-\label{demo}
-\end{figure}
 
 %\end{column}
 

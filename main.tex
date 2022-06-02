@@ -50,8 +50,8 @@
 %\author{matematika.pl} % Author(s)
 
 \author{Loïc Reboursière \inst{1} \and Thierry Dutoit \inst{1} \and Vincent Tiffon \inst{2}}
-\institute[shortinst]{\inst{1} UMONS, ISIA Lab, first.last@umons.ac.be \and %
-                      \inst{2} PRISM, Université AixMarseille, tiffon@prism.cnrs.fr}
+\institute[shortinst]{\inst{1} UMONS, ISIA Lab, firstname.lastname@umons.ac.be \and %
+                      \inst{2} PRISM, Aix Marseille Université, tiffon@prism.cnrs.fr}
 
 %\affil{UMONS, ISIA LAb \email{loic.reboursiere@umons.ac.be}}
 %\and
@@ -87,13 +87,13 @@
 
 
 \begin{itemize}
-    \item Dataset for hexaphonic guitar practice (i.e with a hexaphonic multieffect) analysis as well as MIR-related tasks
+    \item Dataset for hexaphonic guitar practice (i.e with a individual set of effects for each string) analysis as well as MIR-related tasks
     
     \item Contains synchronized video, audio, data and transcribed interview for each improvisation recording
     
-    \item Annotated data include : picth, fret, playing techniques, extended playing techniques, improvisation structure and duration, tuning and used audio effects and presets
+    \item Annotated data include : picth, fret, playing techniques, extended playing techniques, improvisation structure, tuning, audio effects and presets
     
-    \item Open-source : \url{https://github.com/numediart/GIHME}
+    \item \url{https://github.com/numediart/GIHME}
     
 \end{itemize}
 
@@ -110,11 +110,12 @@
 %\textbf{Forms of Quadratic Function}
 
 \begin{itemize}
-    \item Two scenarios (see Table 1 and 2) were part of the recordings of the experiment. They were preceeded by a "discovery" scenario where the researcher help setting up the effects;
-    \item Each sub-scenario was divided in test, improvisation recording and interview parts. These three steps could be repeated.
+    \item Two scenarios (see Table 1 and 2) were part of the recordings of the experiment. They were preceeded by a "discovery" scenario where the researcher helped guitarists to set up the effects
+    \item Each sub-scenario was divided in three sections : test, improvisation recording and interview. These three steps could be repeated as often as wished
 \end{itemize}
 
 \\ 
+\small
 \begin{table}
   
   \label{tab:scenario1}
@@ -223,14 +224,14 @@
 %\end{figure}
 
 \begin{itemize}
-    \item Medium long shot of the guitarist as well as hexaphonic multieffect GUI modification were video recorded
+    \item Medium long shot of the guitarist as well as hexaphonic multieffect GUI modifications were video recorded
     \item Audio recordings contain "dry" (i.e. no effect) and "wet" (i.e. with effects) hexaphonic signals as well as monophonic reduction of the wet signals
-    \item Hexaphonic multieffect gathers 6 arguably "classic" audio effects for guitarists (distorsion, delay, ring modulator, flanger, tremolo and reverb) and an graphical representation of the individual bypasses as a matrix
+    \item Hexaphonic multieffect gathers 6 (arguably) "classic" audio effects for guitarists (distorsion, delay, ring modulator, flanger, tremolo and reverb) and a matrix representation of the individual bypasses
 \end{itemize}
 
 \begin{figure}[h]
 %\includegraphics[scale=0.7]{block_diagram_moyen}
-\includegraphics[width = 0.7\onecolwid]{img/191025-Patch-experience.png}
+\includegraphics[width = 0.65\onecolwid]{img/191025-Patch-experience.png}
 \caption{Experimental audio and recording setup.}
 \label{demo}
 \end{figure}
@@ -267,17 +268,17 @@
 
 %Use of DCTTS (tensorflow implementation)
 \begin{itemize}
-    \item 5 guitarists : 
+    \item 5 guitarists, 3 days of experiment for each one
     \item 10h of musical improvisations and 4h30 of interviews
     \item Automatic (effects bypass activation), semi-automatic (pitch and fret), manual  (playing techniques and extended playing techniques) and global (tuning, improvisation structure, used effects and presets) annotations
-    \item Annotations are in different format in order to be imported in different kind of software (Sonic Visualizer\footnote{https://www.sonicvisualiser.org/}, Advene\footnote{https://www.advene.org/}, etc.)
+    \item Annotations are in different formats in order to be imported in different kind of software (Sonic Visualizer\footnote{https://www.sonicvisualiser.org/}, Advene\footnote{https://www.advene.org/}, etc.)
     \item All the interviews have been transcribed in Microsoft Word format
 \end{itemize}
 
 
 \begin{figure}[h]
 %\includegraphics[scale=0.7]{block_diagram_moyen}
-\includegraphics[width = 0.98\onecolwid]{img/IvannCruz_2_3_1_Advene.png}
+\includegraphics[width = 0.8\onecolwid]{img/IvannCruz_2_3_1_Advene.png}
 \caption{GIHME annotations integration example in Advene software.}
 \label{demo}
 \end{figure}
@@ -309,13 +310,13 @@
 \begin{block}{Analysis}
 \begin{itemize}
     \item First analysis based on the transcriptions of the interviews
-    \item All guitarists felt, at some point, constrained by the experimental setup (scenario or technical elements) 
-    \item All guitarists developed strategies to take ownership of the hexaphonic multieffect possibilities
-    \item Despite being more "complex" the system respect the practice of the guitarist and is felt as "familiar" 
+    \item All guitarists felt, at some point, constrained by the experimental setup (because of scenarios or technical elements) 
+    \item All guitarists developed strategies to absorb the hexaphonic multieffect possibilities
+    \item Despite being more "complex" to handle, the system respects the practice of the guitarist and is felt as "familiar" 
     %\begin{quote}
      %It doesn't question the practice. The practice stays, it exists. However, it reconsiders it, in the sense where, as new things happen, you have to adapt. [...] It's a system that forces you to look deeply at the instrument for ways to adapt, even if it is a material that I know. (Guitarist 2, extract of post improvisation interview, scenario2\_5, pers. comm.)
     %\end{quote}
-    \item This system brings extensive sound possibilities similar to the ones found by DAW
+    \item This system brings extensive sound possibilities similar to the ones found in digital audio software
     \item Hexaphonic multieffect could more easily fit into practices that use extensively individualisation of the fingers/strings, such as classical guitar or prepared guitar practices
 %\begin{quote}
 %With a classical guitar, we work with the aim of being able to have an action as independent as possible from each finger and therefore potentially also differentiated regarding the strings. (Guitarist 4, complementary interview, pers. comm.)
@@ -355,10 +356,10 @@
 
 \begin{itemize}
     \item More guitarists with different playing styles
-    \item Specific software for visualize all the different elements 
+    \item Tailored vizualization software development
     \item Use of theoretical music models (such as Anthony de Souza's fretboard transformations model\footnote{J. De Souza, “Fretboard Transformations,” Journal of
 Music theory, vol. 62, no. 1, pp. 1–39, 2018.}) to have common ground for the analysis
-    \item Develop a dual before/after hexaphony approach for practice analysis
+    \item Include a before/after hexaphony approach to practices analysis
 \end{itemize}
 
 \end{alertblock} 
@@ -368,7 +369,7 @@ Music theory, vol. 62, no. 1, pp. 1–39, 2018.}) to have common ground for the 
 
 %\end{column} % End of the second column
 
-\begin{column}{\sepwid}\end{column} % Empty spacer column
+%\begin{column}{\sepwid}\end{column} % Empty spacer column
 
 %\begin{column}{\onecolwid} % The third column
 
